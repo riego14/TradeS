@@ -1,0 +1,362 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="hero-section position-relative" style="min-height: 100vh; overflow: hidden;">
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <!-- Left Quadrants (1st and 3rd) -->
+            <div class="col-md-6">
+                <!-- 1st Quadrant: Main Hero Content -->
+                <div class="d-flex flex-column justify-content-center align-items-start px-4 px-md-5" style="min-height: 50vh; padding-top: 3rem;">
+                    <!-- Modern accent line -->
+                    <div class="mb-4 position-relative">
+                        <div style="width: 80px; height: 4px; background: linear-gradient(90deg, #7c3aed, #ec4899); border-radius: 2px;"></div>
+                    </div>
+                    
+                    <!-- Main heading with gradient text -->
+                    <h1 class="fw-bold mb-4 gradient-text" style="font-size: 3.5rem; max-width: 600px; letter-spacing: -0.5px; line-height: 1.1;">Trade Stocks<br>Effortlessly With Us</h1>
+                    
+                    <!-- Subtitle with improved styling -->
+                    <p class="lead mb-4" style="font-size: 1.2rem; max-width: 500px; color: rgba(255,255,255,0.8); font-weight: 300;">Unlock the potential of digital assets with our user-friendly platform. Start trading now.</p>
+                    
+                    <!-- Modern CTA button -->
+                    <div class="mb-4">
+                        <a href="/Home/Stocks" class="btn-gradient px-5 py-3">Get Started</a>
+                    </div>
+                    
+                    <!-- Blog Posts/Promotions -->
+                    <div class="mt-4 p-3" style="background: rgba(42, 45, 58, 0.5); border-radius: 10px; max-width: 500px;">
+                        <h5 class="text-white mb-3">Latest from TradeS</h5>
+                        <div class="d-flex align-items-center mb-2">
+                            <div style="width: 12px; height: 12px; background: linear-gradient(90deg, #7c3aed, #ec4899); border-radius: 50%; margin-right: 10px;"></div>
+                            <p class="mb-0 text-white small">Market analysis: Tech stocks showing strong recovery in Q2</p>
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <div style="width: 12px; height: 12px; background: linear-gradient(90deg, #7c3aed, #ec4899); border-radius: 50%; margin-right: 10px;"></div>
+                            <p class="mb-0 text-white small">New trading features released: Advanced charting tools</p>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div style="width: 12px; height: 12px; background: linear-gradient(90deg, #7c3aed, #ec4899); border-radius: 50%; margin-right: 10px;"></div>
+                            <p class="mb-0 text-white small">Join our webinar: Mastering market volatility</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 3rd Quadrant: Additional content can go here if needed -->
+                <div style="min-height: 25vh;"></div>
+            </div>
+            
+            <!-- Right Quadrants (2nd and 4th) -->
+            <div class="col-md-6">
+                <!-- 2nd Quadrant: Diversify with TradeS Funds -->
+                <div class="px-4 px-md-5 pt-5" style="min-height: 25vh;">
+                    <div class="fund-tile p-4" style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(236, 72, 153, 0.1)); border: 1px solid rgba(124, 58, 237, 0.2); border-radius: 12px; margin-bottom: 30px;">
+                        <h3 class="text-white mb-3">Diversify with TradeS Funds</h3>
+                        <p class="text-white-50 mb-4">Invest in curated funds managed by expert traders. Minimize risk while maximizing your portfolio's growth potential.</p>
+                        <a href="/Home/Stocks" class="btn" style="background: linear-gradient(90deg, #7c3aed, #ec4899); color: white; border: none; padding: 10px 20px; font-weight: 500; border-radius: 6px;">Explore Funds</a>
+                    </div>
+                    
+                    <!-- Market Movers Section -->
+                    <div class="market-movers-tile">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h4 class="text-white mb-0">Market Movers</h4>
+                            <div>
+                                <a href="/Home/Stocks" class="text-white-50 small">See More...</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Top Gainers -->
+                        @if (ViewBag.Gainers != null && ViewBag.Gainers.Count > 0)
+                        {
+                            var gainer = ViewBag.Gainers[0];
+                            <!-- Top Gainer Card -->
+                            <div class="stock-card mb-3" style="background: rgba(42, 45, 58, 0.7); border-radius: 10px; padding: 15px; border-left: 4px solid rgba(74, 222, 128, 0.8); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <div style="width: 36px; height: 36px; background-color: rgba(74, 222, 128, 0.8); border-radius: 6px; display: flex; align-items: center; justify-content: center; margin-right: 12px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                                            <span class="text-dark fw-bold">@(gainer.Symbol.Substring(0, 1))</span>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 text-white">@gainer.Symbol</h6>
+                                            <small class="text-muted">@gainer.Name</small>
+                                        </div>
+                                    </div>
+                                    <div class="text-end">
+                                        <div class="text-white fw-bold">@gainer.Price</div>
+                                        <div class="text-success small"><i class="bi bi-arrow-up-right"></i> @gainer.Change</div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        
+                        <!-- Second Gainer -->
+                        @if (ViewBag.Gainers != null && ViewBag.Gainers.Count > 1)
+                        {
+                            var gainer = ViewBag.Gainers[1];
+                            <!-- Second Gainer Card -->
+                            <div class="stock-card mb-3" style="background: rgba(42, 45, 58, 0.7); border-radius: 10px; padding: 15px; border-left: 4px solid rgba(74, 222, 128, 0.8); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <div style="width: 36px; height: 36px; background-color: rgba(74, 222, 128, 0.8); border-radius: 6px; display: flex; align-items: center; justify-content: center; margin-right: 12px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                                            <span class="text-dark fw-bold">@(gainer.Symbol.Substring(0, 1))</span>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 text-white">@gainer.Symbol</h6>
+                                            <small class="text-muted">@gainer.Name</small>
+                                        </div>
+                                    </div>
+                                    <div class="text-end">
+                                        <div class="text-white fw-bold">@gainer.Price</div>
+                                        <div class="text-success small"><i class="bi bi-arrow-up-right"></i> @gainer.Change</div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        
+                        <!-- Top Loser -->
+                        @if (ViewBag.Losers != null && ViewBag.Losers.Count > 0)
+                        {
+                            var loser = ViewBag.Losers[0];
+                            <!-- Top Loser Card -->
+                            <div class="stock-card mb-3" style="background: rgba(42, 45, 58, 0.7); border-radius: 10px; padding: 15px; border-left: 4px solid rgba(239, 68, 68, 0.8); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <div style="width: 36px; height: 36px; background-color: rgba(239, 68, 68, 0.8); border-radius: 6px; display: flex; align-items: center; justify-content: center; margin-right: 12px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                                            <span class="text-white fw-bold">@(loser.Symbol.Substring(0, 1))</span>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 text-white">@loser.Symbol</h6>
+                                            <small class="text-muted">@loser.Name</small>
+                                        </div>
+                                    </div>
+                                    <div class="text-end">
+                                        <div class="text-white fw-bold">@loser.Price</div>
+                                        <div class="text-danger small"><i class="bi bi-arrow-down-right"></i> @loser.Change</div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                
+                <!-- 4th Quadrant: Additional content can go here if needed -->
+                <div style="min-height: 10vh; display: block; width: 100%; clear: both;"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Beginner Friendly Section -->
+    <div class="beginner-section py-5" style="background: linear-gradient(135deg, rgba(21, 24, 35, 0.95), rgba(30, 22, 45, 0.95)); border-top: 1px solid rgba(124, 58, 237, 0.2); border-bottom: 1px solid rgba(236, 72, 153, 0.15);">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <h2 class="gradient-text fw-bold mb-3" style="font-size: 2.5rem;">New to Trading? We’ve Got You Covered</h2>
+                    <p class="text-white-50 mb-3" style="font-size: 1.05rem;">Trading is simply buying and selling assets like stocks or crypto, hoping they grow in value over time.</p>
+                    <p class="text-white-50 mb-4" style="font-size: 1.05rem;">We’ll guide you through the basics, show you how to watch the markets, and help you practice before you invest real money.</p>
+                    <a href="/Account/Signup" class="btn-gradient px-4 py-3">Learn More</a>
+                </div>
+                <div class="col-lg-7">
+                    <div class="d-flex flex-column gap-4">
+                        <div class="d-flex align-items-start" style="background: rgba(42, 45, 58, 0.75); border-radius: 16px; padding: 25px; border-left: 4px solid rgba(124, 58, 237, 0.6); box-shadow: 0 20px 35px -20px rgba(12, 10, 25, 0.9);">
+                            <div class="me-3" style="width: 56px; height: 56px; border-radius: 16px; background: linear-gradient(135deg, #7c3aed, #ec4899); display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 24px -12px rgba(124, 58, 237, 0.8);">
+                                <i class="bi bi-person-plus-fill text-white" style="font-size: 1.8rem;"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-white fw-bold mb-2">Step 1: Create an account</h5>
+                                <p class="text-white-50 mb-0" style="font-size: 1rem;">Sign up in minutes and personalize your dashboard to follow the stocks and coins you care about.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start" style="background: rgba(42, 45, 58, 0.75); border-radius: 16px; padding: 25px; border-left: 4px solid rgba(236, 72, 153, 0.6); box-shadow: 0 20px 35px -20px rgba(12, 10, 25, 0.9);">
+                            <div class="me-3" style="width: 56px; height: 56px; border-radius: 16px; background: linear-gradient(135deg, #ec4899, #7c3aed); display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 24px -12px rgba(236, 72, 153, 0.7);">
+                                <i class="bi bi-journal-bookmark-fill text-white" style="font-size: 1.8rem;"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-white fw-bold mb-2">Step 2: Learn with our tutorials</h5>
+                                <p class="text-white-50 mb-0" style="font-size: 1rem;">Follow bite-sized lessons that explain key trading terms, simple strategies, and how to read charts without the jargon.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start" style="background: rgba(42, 45, 58, 0.75); border-radius: 16px; padding: 25px; border-left: 4px solid rgba(139, 92, 246, 0.6); box-shadow: 0 20px 35px -20px rgba(12, 10, 25, 0.9);">
+                            <div class="me-3" style="width: 56px; height: 56px; border-radius: 16px; background: linear-gradient(135deg, #8b5cf6, #ec4899); display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 24px -12px rgba(139, 92, 246, 0.7);">
+                                <i class="bi bi-rocket-takeoff-fill text-white" style="font-size: 1.8rem;"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-white fw-bold mb-2">Step 3: Start trading with practice tools</h5>
+                                <p class="text-white-50 mb-0" style="font-size: 1rem;">Use our virtual portfolio to test your skills, build confidence, and move to live trades whenever you’re ready.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features-section py-5" style="background: linear-gradient(to bottom, #1a1a24, #1c2331); border-top: 1px solid rgba(124, 58, 237, 0.2); padding-bottom: 80px;">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="gradient-text fw-bold" style="font-size: 2.5rem; margin-bottom: 25px;">Why Choose TradeS?</h2>
+                <p class="text-white-50 mx-auto" style="max-width: 700px; font-size: 1.1rem; margin-bottom: 40px;">Our platform offers a seamless trading experience with real-time market data and intuitive tools.</p>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0 px-4">
+                    <div class="feature-card mb-5" style="background: rgba(42, 45, 58, 0.7); border-radius: 16px; padding: 35px; border-left: 4px solid #7c3aed;">
+                        <div class="d-flex align-items-start">
+                            <div style="width: 60px; height: 60px; border-radius: 12px; background: linear-gradient(135deg, #7c3aed, #ec4899); display: flex; align-items: center; justify-content: center; margin-right: 25px; flex-shrink: 0;">
+                                <i class="bi bi-lightning-charge text-white" style="font-size: 1.8rem;"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white fw-bold mb-3">Fast Execution</h4>
+                                <p class="text-white-50 mb-0" style="font-size: 1.05rem; line-height: 1.6;">Trade faster and easier.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card" style="background: rgba(42, 45, 58, 0.7); border-radius: 16px; padding: 35px; border-left: 4px solid #ec4899;">
+                        <div class="d-flex align-items-start">
+                            <div style="width: 60px; height: 60px; border-radius: 12px; background: linear-gradient(135deg, #ec4899, #7c3aed); display: flex; align-items: center; justify-content: center; margin-right: 25px; flex-shrink: 0;">
+                                <i class="bi bi-shield-check text-white" style="font-size: 1.8rem;"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white fw-bold mb-3">Secure Platform</h4>
+                                <p class="text-white-50 mb-0" style="font-size: 1.05rem; line-height: 1.6;">Your investments are protected with enterprise-grade security.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 px-4">
+                    <div style="background: rgba(42, 45, 58, 0.7); border-radius: 16px; padding: 40px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2); border: 1px solid rgba(124, 58, 237, 0.2);">
+                        <div class="text-center mb-5">
+                            <div style="width: 90px; height: 90px; border-radius: 20px; background: linear-gradient(135deg, #7c3aed, #ec4899); display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; box-shadow: 0 10px 15px -3px rgba(124, 58, 237, 0.3);">
+                                <i class="bi bi-bar-chart-line-fill text-white" style="font-size: 2.5rem;"></i>
+                            </div>
+                            <h3 class="text-white fw-bold mb-4">Start Trading Today</h3>
+                            <p class="text-white-50 mb-5" style="font-size: 1.1rem;">Become one of the traders who have already discovered the TradeS advantage.</p>
+                        </div>
+                        
+                        <a href="/Home/Stocks" class="btn w-100 py-3" style="background: linear-gradient(90deg, #7c3aed, #ec4899); color: white; border: none; font-weight: 600; border-radius: 8px; font-size: 1.2rem; box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);">Explore Markets</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Market Movers Live Updates
+        function updateMarketMovers() {
+            fetch('/Home/GetMarketMovers')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Get all market mover cards
+                        const stockCards = document.querySelectorAll('.market-movers-tile .stock-card');
+                        
+                        if (stockCards.length >= 3) {
+                            // First card should show top gainer
+                            if (data.gainers && data.gainers.length > 0) {
+                                const gainer = data.gainers[0];
+                                updateCardWithData(stockCards[0], gainer, true);
+                            }
+                            
+                            // Second card should show another gainer
+                            if (data.gainers && data.gainers.length > 1) {
+                                const gainer = data.gainers[1];
+                                updateCardWithData(stockCards[1], gainer, true);
+                            }
+                            
+                            // Third card should show top loser
+                            if (data.losers && data.losers.length > 0) {
+                                const loser = data.losers[0];
+                                updateCardWithData(stockCards[2], loser, false);
+                            }
+                        }
+                    }
+                })
+                .catch(error => console.error('Error updating market movers:', error));
+        }
+        
+        // Helper function to update a card with stock data
+        function updateCardWithData(card, stockData, isPositive) {
+            if (!card || !stockData) return;
+            
+            // Update the card with the stock data
+            const initial = stockData.symbol.substring(0, 1);
+            card.querySelector('.d-flex:first-child div:first-child span').textContent = initial;
+            card.querySelector('h6').textContent = stockData.symbol;
+            card.querySelector('small').textContent = stockData.name;
+            card.querySelector('.text-white.fw-bold').textContent = '$' + stockData.price;
+            
+            // Set the appropriate class for change
+            const changeElement = card.querySelector('.text-success.small, .text-danger.small, [style*="color: #eab308"]');
+            if (changeElement) {
+                // Set the appropriate color class
+                if (isPositive) {
+                    changeElement.className = 'text-success small';
+                } else {
+                    changeElement.className = 'text-danger small';
+                    changeElement.style = ''; // Clear any inline styles
+                }
+                
+                // Set the appropriate icon and text
+                const icon = isPositive ? '<i class="bi bi-arrow-up-right"></i> ' : '<i class="bi bi-arrow-down-right"></i> ';
+                changeElement.innerHTML = icon + stockData.change;
+            }
+            
+            // Set appropriate card colors based on positive/negative change
+            if (isPositive) {
+                // For gainers (positive change)
+                card.style.borderLeft = '4px solid rgba(74, 222, 128, 0.8)';
+                card.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+                const iconDiv = card.querySelector('.d-flex:first-child div:first-child');
+                if (iconDiv) {
+                    iconDiv.style.backgroundColor = 'rgba(74, 222, 128, 0.8)';
+                    iconDiv.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+                }
+            } else {
+                // For losers (negative change)
+                card.style.borderLeft = '4px solid rgba(239, 68, 68, 0.8)';
+                card.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+                const iconDiv = card.querySelector('.d-flex:first-child div:first-child');
+                if (iconDiv) {
+                    iconDiv.style.backgroundColor = 'rgba(239, 68, 68, 0.8)';
+                    iconDiv.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+                }
+            }
+        }
+
+        // Update prices every 5 seconds
+        function updatePrices() {
+            fetch('/Home/UpdatePrices')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // After updating prices, refresh the market movers
+                        updateMarketMovers();
+                    }
+                })
+                .catch(error => console.error('Error updating prices:', error));
+        }
+
+        // Set up intervals for updates
+        setInterval(updateMarketMovers, 5000); // Update market movers every 5 seconds
+        setInterval(updatePrices, 60000); // Update prices every minute
+
+        // Initial updates
+        document.addEventListener("DOMContentLoaded", function() {
+            updateMarketMovers();
+            setTimeout(updatePrices, 2000); // Delay initial price update slightly
+        });
+
+        // Comment out the automatic page refresh for better scrolling experience
+        /*
+        function refreshHomepage() {
+            location.reload(); // Reload the page to update content
+        }
+        setInterval(refreshHomepage, 30000); // Refresh every 30 seconds for development
+        */
+    </script>
+}

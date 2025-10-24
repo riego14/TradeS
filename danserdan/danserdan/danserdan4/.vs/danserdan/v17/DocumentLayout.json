@@ -1,0 +1,536 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|c:\\users\\user\\onedrive\\documents\\it15\\trades\\danserdan\\danserdan\\danserdan4\\danserdan\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|solutionrelative:danserdan\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|c:\\users\\user\\onedrive\\documents\\it15\\trades\\danserdan\\danserdan\\danserdan4\\danserdan\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|solutionrelative:danserdan\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|c:\\users\\user\\onedrive\\documents\\it15\\trades\\danserdan\\danserdan\\danserdan4\\danserdan\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|solutionrelative:danserdan\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|c:\\users\\user\\onedrive\\documents\\it15\\trades\\danserdan\\danserdan\\danserdan4\\danserdan\\views\\home\\aboutus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|solutionrelative:danserdan\\views\\home\\aboutus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|c:\\users\\user\\onedrive\\documents\\it15\\trades\\danserdan\\danserdan\\danserdan4\\danserdan\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|solutionrelative:danserdan\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|c:\\users\\user\\onedrive\\documents\\it15\\trades\\danserdan\\danserdan\\danserdan4\\danserdan\\views\\shared\\_signuppartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|solutionrelative:danserdan\\views\\shared\\_signuppartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|c:\\users\\user\\onedrive\\documents\\it15\\trades\\danserdan\\danserdan\\danserdan4\\danserdan\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|solutionrelative:danserdan\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|c:\\users\\user\\onedrive\\documents\\it15\\trades\\danserdan\\danserdan\\danserdan4\\danserdan\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|solutionrelative:danserdan\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|c:\\users\\user\\onedrive\\documents\\it15\\trades\\danserdan\\danserdan\\danserdan4\\danserdan\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|solutionrelative:danserdan\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|c:\\users\\user\\onedrive\\documents\\it15\\trades\\danserdan\\danserdan\\danserdan4\\danserdan\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|solutionrelative:danserdan\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|c:\\users\\user\\onedrive\\documents\\it15\\trades\\danserdan\\danserdan\\danserdan4\\danserdan\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|solutionrelative:danserdan\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|c:\\users\\user\\onedrive\\documents\\it15\\trades\\danserdan\\danserdan\\danserdan4\\danserdan\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|solutionrelative:danserdan\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\miyatot\\AppData\\Local\\Temp\\2n3f2yrd..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|c:\\users\\user\\onedrive\\documents\\it15\\trades\\danserdan\\danserdan\\danserdan4\\danserdan\\views\\home\\stocks.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|solutionrelative:danserdan\\views\\home\\stocks.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|c:\\users\\user\\onedrive\\documents\\it15\\trades\\danserdan\\danserdan\\danserdan4\\danserdan\\models\\stocks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|solutionrelative:danserdan\\models\\stocks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|c:\\users\\user\\onedrive\\documents\\it15\\trades\\danserdan\\danserdan\\danserdan4\\danserdan\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|solutionrelative:danserdan\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|c:\\users\\user\\onedrive\\documents\\it15\\trades\\danserdan\\danserdan\\danserdan4\\danserdan\\services\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|solutionrelative:danserdan\\services\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|c:\\users\\user\\onedrive\\documents\\it15\\trades\\danserdan\\danserdan\\danserdan4\\danserdan\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|solutionrelative:danserdan\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|c:\\users\\user\\onedrive\\documents\\it15\\trades\\danserdan\\danserdan\\danserdan4\\danserdan\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|solutionrelative:danserdan\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|c:\\users\\user\\onedrive\\documents\\it15\\trades\\danserdan\\danserdan\\danserdan4\\danserdan\\controllers\\stockcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|solutionrelative:danserdan\\controllers\\stockcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|c:\\users\\user\\onedrive\\documents\\it15\\trades\\danserdan\\danserdan\\danserdan4\\danserdan\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|solutionrelative:danserdan\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|c:\\users\\user\\onedrive\\documents\\it15\\trades\\danserdan\\danserdan\\danserdan4\\danserdan\\views\\shared\\_authcardheader.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|solutionrelative:danserdan\\views\\shared\\_authcardheader.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|c:\\users\\user\\onedrive\\documents\\it15\\trades\\danserdan\\danserdan\\danserdan4\\danserdan\\services\\alphavantageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|solutionrelative:danserdan\\services\\alphavantageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|c:\\users\\user\\onedrive\\documents\\it15\\trades\\danserdan\\danserdan\\danserdan4\\danserdan\\services\\alphavantageoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|solutionrelative:danserdan\\services\\alphavantageoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|c:\\users\\user\\onedrive\\documents\\it15\\trades\\danserdan\\danserdan\\danserdan4\\danserdan\\migrations\\20250423031953_migratenabayawa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|solutionrelative:danserdan\\migrations\\20250423031953_migratenabayawa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|c:\\users\\user\\onedrive\\documents\\it15\\trades\\danserdan\\danserdan\\danserdan4\\danserdan\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|solutionrelative:danserdan\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|c:\\users\\user\\onedrive\\documents\\it15\\trades\\danserdan\\danserdan\\danserdan4\\danserdan\\views\\account\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|solutionrelative:danserdan\\views\\account\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\miyatot\\source\\repos\\danserdan\\danserdan\\Migrations\\20250423031358_migratenaba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\miyatot\\source\\repos\\danserdan\\danserdan\\Migrations\\20250423030226_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|c:\\users\\user\\onedrive\\documents\\it15\\trades\\danserdan\\danserdan\\danserdan4\\danserdan\\danserdan.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{52532BF2-3184-4C66-A100-115F9982728C}|danserdan\\danserdan.csproj|solutionrelative:danserdan\\danserdan.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\miyatot\\source\\repos\\danserdan3\\danserdan\\Views\\Home\\Currency.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Microsoft.PackageDependencyResolution.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-10-02T08:29:31.079Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Views\\Account\\Profile.cshtml",
+              "RelativeDocumentMoniker": "danserdan\\Views\\Account\\Profile.cshtml",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Views\\Account\\Profile.cshtml",
+              "RelativeToolTip": "danserdan\\Views\\Account\\Profile.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-23T15:10:45.85Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "danserdan\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "danserdan\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAHoBAAAAAAAAAAArwI4BAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T02:44:23.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\appsettings.json",
+              "RelativeDocumentMoniker": "danserdan\\appsettings.json",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\appsettings.json",
+              "RelativeToolTip": "danserdan\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-23T02:07:39.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_SignupPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Views\\Shared\\_SignupPartial.cshtml",
+              "RelativeDocumentMoniker": "danserdan\\Views\\Shared\\_SignupPartial.cshtml",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Views\\Shared\\_SignupPartial.cshtml",
+              "RelativeToolTip": "danserdan\\Views\\Shared\\_SignupPartial.cshtml",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAuwGsAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-21T14:54:03.049Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "danserdan\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "danserdan\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAADoBAAAAAAAAAAAAAEkBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-19T11:05:43.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_LoginPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeDocumentMoniker": "danserdan\\Views\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeToolTip": "danserdan\\Views\\Shared\\_LoginPartial.cshtml",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAuwGwAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-21T14:54:13.644Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Stocks.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Models\\Stocks.cs",
+              "RelativeDocumentMoniker": "danserdan\\Models\\Stocks.cs",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Models\\Stocks.cs",
+              "RelativeToolTip": "danserdan\\Models\\Stocks.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAIwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T16:44:03.19Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Aboutus.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Views\\Home\\Aboutus.cshtml",
+              "RelativeDocumentMoniker": "danserdan\\Views\\Home\\Aboutus.cshtml",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Views\\Home\\Aboutus.cshtml",
+              "RelativeToolTip": "danserdan\\Views\\Home\\Aboutus.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-27T14:58:33.131Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ApplicationDBContext.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Services\\ApplicationDBContext.cs",
+              "RelativeDocumentMoniker": "danserdan\\Services\\ApplicationDBContext.cs",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Services\\ApplicationDBContext.cs",
+              "RelativeToolTip": "danserdan\\Services\\ApplicationDBContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T02:10:59.706Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Program.cs",
+              "RelativeDocumentMoniker": "danserdan\\Program.cs",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Program.cs",
+              "RelativeToolTip": "danserdan\\Program.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAkwEAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T02:07:12.512Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Currency.cshtml",
+              "DocumentMoniker": "C:\\Users\\miyatot\\source\\repos\\danserdan3\\danserdan\\Views\\Home\\Currency.cshtml",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\miyatot\\source\\repos\\danserdan3\\danserdan\\Views\\Home\\Currency.cshtml",
+              "ToolTip": "C:\\Users\\miyatot\\source\\repos\\danserdan3\\danserdan\\Views\\Home\\Currency.cshtml",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\miyatot\\source\\repos\\danserdan3\\danserdan\\Views\\Home\\Currency.cshtml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-25T17:32:13.495Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "danserdan\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "danserdan\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-02T08:28:37.969Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "danserdan\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "danserdan\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-02T08:28:41.263Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "StockController.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Controllers\\StockController.cs",
+              "RelativeDocumentMoniker": "danserdan\\Controllers\\StockController.cs",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Controllers\\StockController.cs",
+              "RelativeToolTip": "danserdan\\Controllers\\StockController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAA4wBQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T18:03:57.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Users.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Models\\Users.cs",
+              "RelativeDocumentMoniker": "danserdan\\Models\\Users.cs",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Models\\Users.cs",
+              "RelativeToolTip": "danserdan\\Models\\Users.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T02:23:12.92Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "danserdan\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "danserdan\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-19T11:16:54.72Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "danserdan\\Views\\Admin\\Index.cshtml",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "danserdan\\Views\\Admin\\Index.cshtml",
+              "ViewState": "AgIAAJcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-02T04:35:06.169Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Stocks.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Views\\Home\\Stocks.cshtml",
+              "RelativeDocumentMoniker": "danserdan\\Views\\Home\\Stocks.cshtml",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Views\\Home\\Stocks.cshtml",
+              "RelativeToolTip": "danserdan\\Views\\Home\\Stocks.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-12T13:46:15.011Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "2n3f2yrd..sql",
+              "DocumentMoniker": "C:\\Users\\miyatot\\AppData\\Local\\Temp\\2n3f2yrd..sql",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\miyatot\\AppData\\Local\\Temp\\2n3f2yrd..sql",
+              "ToolTip": "C:\\Users\\miyatot\\AppData\\Local\\Temp\\2n3f2yrd..sql",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\miyatot\\AppData\\Local\\Temp\\2n3f2yrd..sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-05-15T05:14:17.513Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "danserdan\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "danserdan\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAABQBAAAAAAAAAAAQwFwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-19T11:21:14.376Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "danserdan\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "danserdan\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAIBJwFUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T11:00:29.586Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "danserdan\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "danserdan\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAGYBAAAAAAAAAAAqwHsBAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-21T16:34:04.99Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "_AuthCardHeader.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Views\\Shared\\_AuthCardHeader.cshtml",
+              "RelativeDocumentMoniker": "danserdan\\Views\\Shared\\_AuthCardHeader.cshtml",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Views\\Shared\\_AuthCardHeader.cshtml",
+              "RelativeToolTip": "danserdan\\Views\\Shared\\_AuthCardHeader.cshtml",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwDEAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-19T12:25:20.003Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "AlphaVantageService.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Services\\AlphaVantageService.cs",
+              "RelativeDocumentMoniker": "danserdan\\Services\\AlphaVantageService.cs",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Services\\AlphaVantageService.cs",
+              "RelativeToolTip": "danserdan\\Services\\AlphaVantageService.cs",
+              "ViewState": "AgIAAM4AAAAAAAAAAABRwO0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T18:00:15.016Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "AlphaVantageOptions.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Services\\AlphaVantageOptions.cs",
+              "RelativeDocumentMoniker": "danserdan\\Services\\AlphaVantageOptions.cs",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Services\\AlphaVantageOptions.cs",
+              "RelativeToolTip": "danserdan\\Services\\AlphaVantageOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T17:04:04.915Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "20250423031953_migratenabayawa.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Migrations\\20250423031953_migratenabayawa.cs",
+              "RelativeDocumentMoniker": "danserdan\\Migrations\\20250423031953_migratenabayawa.cs",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Migrations\\20250423031953_migratenabayawa.cs",
+              "RelativeToolTip": "danserdan\\Migrations\\20250423031953_migratenabayawa.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T03:19:54.075Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "danserdan\\wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "danserdan\\wwwroot\\js\\site.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-21T15:39:10.788Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Signup.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Views\\Account\\Signup.cshtml",
+              "RelativeDocumentMoniker": "danserdan\\Views\\Account\\Signup.cshtml",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\Views\\Account\\Signup.cshtml",
+              "RelativeToolTip": "danserdan\\Views\\Account\\Signup.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-19T12:23:43.227Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "20250423030226_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\miyatot\\source\\repos\\danserdan\\danserdan\\Migrations\\20250423030226_InitialCreate.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\miyatot\\source\\repos\\danserdan\\danserdan\\Migrations\\20250423030226_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\miyatot\\source\\repos\\danserdan\\danserdan\\Migrations\\20250423030226_InitialCreate.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\miyatot\\source\\repos\\danserdan\\danserdan\\Migrations\\20250423030226_InitialCreate.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T03:02:26.548Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "20250423031358_migratenaba.cs",
+              "DocumentMoniker": "C:\\Users\\miyatot\\source\\repos\\danserdan\\danserdan\\Migrations\\20250423031358_migratenaba.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\miyatot\\source\\repos\\danserdan\\danserdan\\Migrations\\20250423031358_migratenaba.cs",
+              "ToolTip": "C:\\Users\\miyatot\\source\\repos\\danserdan\\danserdan\\Migrations\\20250423031358_migratenaba.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\miyatot\\source\\repos\\danserdan\\danserdan\\Migrations\\20250423031358_migratenaba.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T03:13:58.764Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "danserdan.csproj",
+              "DocumentMoniker": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\danserdan.csproj",
+              "RelativeDocumentMoniker": "danserdan\\danserdan.csproj",
+              "ToolTip": "C:\\Users\\USER\\OneDrive\\Documents\\it15\\TradeS\\danserdan\\danserdan\\danserdan4\\danserdan\\danserdan.csproj",
+              "RelativeToolTip": "danserdan\\danserdan.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-23T02:10:28.778Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

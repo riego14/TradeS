@@ -1,0 +1,312 @@
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content bg-transparent border-0">
+            <style>
+                #loginModal .login-card {
+                    background: linear-gradient(160deg, rgba(42, 45, 58, 0.85), rgba(29, 32, 45, 0.92));
+                    backdrop-filter: blur(18px);
+                    border: 1px solid rgba(255, 255, 255, 0.12);
+                    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.35);
+                    padding: 2.75rem 2.5rem;
+                }
+
+                #loginModal .login-brand {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 0.85rem;
+                    color: #f5f6fa;
+                }
+
+                #loginModal .login-brand-mark {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.65rem;
+                }
+
+                #loginModal .login-brand-logo {
+                    width: 34px;
+                    height: 34px;
+                    object-fit: contain;
+                    filter: drop-shadow(0 4px 12px rgba(168, 85, 247, 0.55));
+                }
+
+                #loginModal .login-brand-text {
+                    font-family: "Poppins", "Segoe UI Semibold", sans-serif;
+                    font-weight: 600;
+                    font-size: 0.95rem;
+                    letter-spacing: 0.18em;
+                    text-transform: uppercase;
+                }
+
+                #loginModal .login-brand-separator {
+                    width: 72px;
+                    height: 1px;
+                    background: linear-gradient(90deg, rgba(168, 85, 247, 0), rgba(168, 85, 247, 0.65), rgba(168, 85, 247, 0));
+                }
+
+                #loginModal .login-title {
+                    font-family: "Poppins", "Segoe UI Semibold", sans-serif;
+                    font-size: 1.875rem;
+                    font-weight: 600;
+                    letter-spacing: 0.01em;
+                    color: #f5f6fa;
+                }
+
+                #loginModal .login-subtitle {
+                    color: rgba(202, 205, 228, 0.75);
+                    font-size: 0.95rem;
+                }
+
+                #loginModal .login-input {
+                    background: rgba(30, 31, 45, 0.75);
+                    border: 1px solid rgba(152, 161, 198, 0.28);
+                    color: #f5f6fa;
+                    border-radius: 12px;
+                    padding: 0.75rem 0.95rem;
+                    transition: border 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+                }
+
+                #loginModal .login-input:focus {
+                    background: rgba(36, 38, 55, 0.88);
+                    border-color: #a855f7;
+                    box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.25);
+                    color: #ffffff;
+                }
+
+                #loginModal .login-submit {
+                    background: linear-gradient(135deg, rgba(124, 58, 237, 0.85), rgba(236, 72, 153, 0.85));
+                    border: none;
+                    color: #ffffff;
+                    border-radius: 14px;
+                    font-weight: 600;
+                    letter-spacing: 0.02em;
+                    transition: transform 0.2s ease, box-shadow 0.2s ease;
+                    box-shadow: 0 10px 26px rgba(124, 58, 237, 0.35);
+                }
+
+                #loginModal .login-submit:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 14px 32px rgba(236, 72, 153, 0.35);
+                }
+
+                #loginModal .login-submit:focus {
+                    box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.25), 0 14px 32px rgba(236, 72, 153, 0.35);
+                }
+
+                #loginModal .login-links a {
+                    color: rgba(168, 85, 247, 0.9);
+                    font-weight: 500;
+                    transition: color 0.2s ease, text-shadow 0.2s ease;
+                }
+
+                #loginModal .login-links a:hover {
+                    color: rgba(236, 72, 153, 0.9);
+                    text-shadow: 0 0 8px rgba(236, 72, 153, 0.45);
+                }
+
+                #loginModal .password-reveal-field {
+                    position: relative;
+                }
+
+                #loginModal .password-reveal-field .login-input {
+                    padding-right: 3.25rem;
+                }
+
+                #loginModal .password-reveal-field.password-reveal-ready .login-input {
+                    color: transparent;
+                    caret-color: #f5f6fa;
+                }
+
+                #loginModal .password-reveal-field.password-reveal-ready.password-showing .login-input {
+                    color: #f5f6fa;
+                }
+
+                #loginModal .password-overlay {
+                    display: none;
+                    position: absolute;
+                    left: 0.95rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: calc(100% - 3.25rem);
+                    font: inherit;
+                    color: #f5f6fa;
+                    pointer-events: none;
+                    white-space: pre;
+                    line-height: 1.5;
+                    z-index: 2;
+                }
+
+                #loginModal .password-overlay.empty {
+                    color: rgba(202, 205, 228, 0.45);
+                }
+
+                #loginModal .password-reveal-field.password-reveal-ready .password-overlay {
+                    display: block;
+                }
+
+                #loginModal .password-reveal-field.password-showing .password-overlay {
+                    display: none;
+                }
+
+                #loginModal .password-toggle {
+                    position: absolute;
+                    top: 50%;
+                    right: 0.7rem;
+                    transform: translateY(-50%);
+                    background: rgba(30, 31, 45, 0.85);
+                    border: 1px solid rgba(168, 85, 247, 0.35);
+                    color: rgba(245, 246, 250, 0.9);
+                    border-radius: 10px;
+                    width: 36px;
+                    height: 36px;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: border 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+                    z-index: 3;
+                }
+
+                #loginModal .password-toggle:hover,
+                #loginModal .password-toggle:focus {
+                    background: rgba(36, 38, 55, 0.95);
+                    border-color: rgba(236, 72, 153, 0.55);
+                    box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.25);
+                    color: #ffffff;
+                }
+
+                #loginModal .password-toggle i {
+                    font-size: 1rem;
+                }
+
+                #loginModal .password-reveal-field.password-showing .password-toggle {
+                    border-color: rgba(236, 72, 153, 0.6);
+                }
+            </style>
+            <div class="modal-body p-0">
+                <!-- Login Form Container -->
+                <div class="login-card text-white rounded-3">
+                    <div class="login-brand mb-4 text-center">
+                        <div class="login-brand-mark">
+                            @if (!string.IsNullOrEmpty(ViewBag.BrandLogoUrl))
+                            {
+                                <img src="@ViewBag.BrandLogoUrl" alt="TradeX Inc logo" class="login-brand-logo" />
+                            }
+                            <span class="login-brand-text">TradeX Inc</span>
+                        </div>
+                        <div class="login-brand-separator"></div>
+                    </div>
+
+                    <!-- Login Header -->
+                    <h3 class="login-title text-center mb-2">Welcome back</h3>
+                    <p class="login-subtitle text-center small mb-4">Login with your account</p>
+
+                    <!-- Login Form -->
+                    <div id="loginErrorMessage" class="alert alert-danger d-none"></div>
+                    <form id="loginForm" method="post">
+                        <input type="hidden" name="isModal" value="true" />
+                        <div class="mb-3">
+                            <label for="username" class="form-label small fw-medium mb-2">Email</label>
+                            <input type="text" class="form-control login-input" id="username" name="username" required minlength="3" maxlength="50" />
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between align-items-center mb-2 login-links">
+                                <label for="password" class="form-label small fw-medium mb-0">Password</label>
+                                <a href="#" class="text-decoration-none small">Forgot your password?</a>
+                            </div>
+                            <div class="password-reveal-field">
+                                <input type="password" class="form-control login-input" id="password" name="password" placeholder="Enter your password" autocomplete="current-password" data-password-input required />
+                                <span class="password-overlay empty" aria-hidden="true"></span>
+                                <button type="button" class="password-toggle" aria-label="Show password">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="d-grid mb-4 mt-4">
+                            <button type="submit" class="btn py-2 fw-medium login-submit">Login</button>
+                        </div>
+                    </form>
+
+                    <!-- Sign Up Link -->
+                    <div class="text-center login-links">
+                        <p class="mb-0 small">Don't have an account? <a href="@Url.Action("Signup", "Account")" class="modal-switch" data-target="signupModal">Sign up</a></p>
+                    </div>
+                </div>
+
+                <!-- Terms and Privacy -->
+                <div class="text-center mt-3">
+                    <p class="text-muted small">
+                        By clicking continue, you agree to our 
+                        <a href="#" class="text-muted">Terms of Service</a> and 
+                        <a href="#" class="text-muted">Privacy Policy</a>
+                    </p>
+                </div>
+            </div>
+            <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-2" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/password-reveal.js" asp-append-version="true"></script>
+<script>
+    $(function () {
+        if (window.TradeSPasswordReveal && typeof window.TradeSPasswordReveal.init === 'function') {
+            window.TradeSPasswordReveal.init($('#loginModal'));
+        }
+
+        $('#loginForm').on('submit', function (e) {
+            e.preventDefault();
+            
+            $('#loginErrorMessage').addClass('d-none');
+            var formData = $(this).serialize();
+            
+            $.ajax({
+                url: '@Url.Action("Login", "Account")',
+                type: 'POST',
+                data: formData,
+                dataType: 'json',
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                success: function (response) {
+                    if (response.success) {
+                        $('#loginModal').modal('hide');
+                        window.location.href = '@Url.Action("Index", "Home")';
+                    } else {
+                        $('#loginErrorMessage').text(response.message || 'An error occurred. Please try again.').removeClass('d-none');
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error:', error);
+                    $('#loginErrorMessage').text('An error occurred. Please try again.').removeClass('d-none');
+                }
+            });
+        });
+
+        $(document).on('click', '.modal-switch', function (e) {
+            e.preventDefault();
+
+            var targetId = $(this).data('target');
+            if (!targetId) {
+                return;
+            }
+
+            var targetSelector = targetId.toString().charAt(0) === '#' ? targetId : ('#' + targetId);
+            var $currentModal = $(this).closest('.modal');
+
+            if ($currentModal.length) {
+                $currentModal.one('hidden.bs.modal', function () {
+                    $(targetSelector).modal('show');
+                });
+                $currentModal.modal('hide');
+            } else {
+                $(targetSelector).modal('show');
+            }
+        });
+
+        $('#loginModal').on('shown.bs.modal', function () {
+            if (window.TradeSPasswordReveal && typeof window.TradeSPasswordReveal.init === 'function') {
+                window.TradeSPasswordReveal.init($(this));
+            }
+        });
+    });
+</script>

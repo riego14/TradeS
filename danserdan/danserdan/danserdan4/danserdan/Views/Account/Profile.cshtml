@@ -1,0 +1,729 @@
+@model danserdan.Models.ProfileViewModel
+@using danserdan.Services
+@using danserdan.Models
+@inject ApplicationDBContext _context
+@inject CurrencyService _currencyService
+
+<div class="container py-5">
+    <div class="row">
+        <!-- User Profile Card -->
+        <div class="col-lg-4 mb-4">
+            <div class="card shadow-sm border-0" style="background-color: #2a2d3a; border-radius: 12px; overflow: hidden;">
+                <div class="card-header" style="background: linear-gradient(90deg, rgba(124, 58, 237, 0.2), rgba(236, 72, 153, 0.2)); border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                    <h4 class="text-white mb-0 fw-bold">Profile</h4>
+                </div>
+                <div class="card-body">
+                    <div class="text-center mb-4">
+                        <div class="avatar-circle mx-auto mb-3" style="width: 100px; height: 100px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md);">
+                            <span class="text-white fw-bold" style="font-size: 2rem;">@Model.User.username.Substring(0, 1).ToUpper()</span>
+                        </div>
+                        <h5 class="text-white fw-bold mb-1">@Model.User.username</h5>
+                        <p class="text-muted small">Member since @Model.User.created_at.ToString("MMMM yyyy")</p>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label small text-muted">Email</label>
+                        <div class="input-group">
+                            <span class="input-group-text" style="background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.05);"><i class="bi bi-envelope"></i></span>
+                            <input type="email" class="form-control" style="background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-primary);" value="@Model.User.email" readonly>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label small text-muted">Account Balance</label>
+                        @{
+                            var preferredCurrency = _currencyService.GetUserPreferredCurrency();
+                            var balanceInUsd = Model.User.balance.HasValue ? Model.User.balance.Value : 0.00m;
+                            var displayAmount = balanceInUsd;
+                            var currencySymbol = "$";
+                            
+                            if (preferredCurrency == "PHP")
+                            {
+                                displayAmount = decimal.Round(balanceInUsd * 56.5m, 2);
+                                currencySymbol = "₱";
+                            }
+                        }
+                        <div class="input-group">
+                            <span class="input-group-text" style="background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.05);"><i class="bi bi-wallet2"></i></span>
+                            <span class="input-group-text" id="userBalanceCurrency" style="background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-primary);">@currencySymbol</span>
+                            <input type="text" class="form-control" style="background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-primary);" id="userBalance" data-original-usd="@balanceInUsd.ToString("F2")" data-currency="@preferredCurrency" value="@displayAmount.ToString("N2")" readonly>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid gap-2 mt-4">
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#editProfileModal" class="btn text-center" style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.8), rgba(236, 72, 153, 0.8)); border: none; color: white; border-radius: 10px; padding: 0.6rem 1.2rem; font-weight: 500; box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3); transition: all 0.3s ease;">
+                            <i class="bi bi-pencil me-2"></i>Edit Profile
+                        </button>
+
+                        <a href="@Url.Action("AddFunds", "Payment")" class="btn text-center" style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.8), rgba(236, 72, 153, 0.8)); border: none; color: white; border-radius: 10px; padding: 0.6rem 1.2rem; font-weight: 500; box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3); transition: all 0.3s ease;">
+                            <i class="bi bi-wallet2 me-2"></i> Add Funds
+                        </a>
+
+                        <a href="@Url.Action("CashOut", "Payment")" class="btn text-center" style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.8), rgba(236, 72, 153, 0.8)); border: none; color: white; border-radius: 10px; padding: 0.6rem 1.2rem; font-weight: 500; box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3); transition: all 0.3s ease;">
+                            <i class="bi bi-cash-coin me-2"></i> Payout
+                        </a>
+
+                
+                       
+                       
+                    </div>
+
+                    
+                    @if (ViewBag.SuccessMessage != null)
+                    {
+                        <div class="alert alert-success mt-3">
+                            <i class="bi bi-check-circle me-2"></i> @ViewBag.SuccessMessage
+                        </div>
+                    }
+                    
+                    @if (ViewBag.ErrorMessage != null)
+                    {
+                        <div class="alert alert-danger mt-3">
+                            <i class="bi bi-exclamation-circle me-2"></i> @ViewBag.ErrorMessage
+                        </div>
+                    }
+                </div>
+            </div>
+            
+            <!-- Account Stats Card -->
+            <div class="modern-card shadow-sm border-0 mt-4">
+                <div class="card-body">
+                    <h5 class="text-white mb-3">Account Stats</h5>
+                    <div class="row text-center">
+                        <div class="col-4">
+                            <h3 class="text-white">@Model.TotalTrades</h3>
+                            <p class="text-muted small mb-0">Transaction</p>
+                        </div>
+                        <div class="col-4">
+                            <h3 class="text-white">@Model.UniqueStocks</h3>
+                            <p class="text-muted small mb-0">Stocks</p>
+                        </div>
+                        <div class="col-4">
+                            @if (Model.TotalReturn >= 0)
+                            {
+                                <h3 class="text-success">+@Model.ReturnPercentage</h3>
+                            }
+                            else
+                            {
+                                <h3 class="text-danger">@Model.ReturnPercentage</h3>
+                            }
+                            <p class="text-muted small mb-0">Return</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Portfolio Section -->
+        <div class="col-lg-8 mb-4">
+            <div class="card shadow-sm border-0" style="background-color: #2a2d3a; border-radius: 12px; overflow: hidden;">
+                <div class="card-header bg-gradient d-flex justify-content-between align-items-center" style="background-color: #222531; border-bottom: none;">
+                    <h4 class="text-white mb-0 fw-bold">Purchased Stocks</h4>
+                    <button class="btn btn-sm btn-gradient" onclick="refreshPortfolio()" style="padding: 0.4rem 0.8rem;">
+                        <i class="bi bi-arrow-repeat me-1"></i> Refresh Prices
+                    </button>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover mb-0" style="background-color: #2a2d3a;">
+                            <thead>
+                                <tr>
+                                    <th>Stock</th>
+                                    <th>Shares</th>
+                                    <th>Avg. Price</th>
+                                    <th>Current Price</th>
+                                    <th>Total Value</th>
+                                    <th>Profit/Loss</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model.StockHoldings.Any())
+                                {
+                                    @foreach (var holding in Model.StockHoldings)
+                                    {
+                                        var profitLossClass = holding.ProfitLoss >= 0 ? "text-success" : "text-danger";
+                                        var profitLossIcon = holding.ProfitLoss >= 0 ? "bi-graph-up-arrow" : "bi-graph-down-arrow";
+                                        var totalValue = holding.CurrentPrice * holding.Quantity;
+                                        
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="symbol me-2" style="width: 30px; height: 30px; background: var(--gradient-primary); border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+                                                        <span class="text-white fw-bold">@holding.Symbol[0]</span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="text-white">@holding.Symbol</span>
+                                                        <div class="text-muted small">@holding.CompanyName</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="text-white">@holding.Quantity</td>
+                                            @{
+                                                var holdingCurrency = _currencyService.GetUserPreferredCurrency();
+                                                var holdingCurrencySymbol = holdingCurrency == "PHP" ? "₱" : "$";
+                                                
+                                                var purchasePrice = holding.PurchasePrice;
+                                                var currentPrice = holding.CurrentPrice;
+                                                var totalValueAmount = totalValue;
+                                                var profitLossAmount = holding.ProfitLoss;
+                                                
+                                                if (holdingCurrency == "PHP")
+                                                {
+                                                    purchasePrice = decimal.Round(purchasePrice * 56.5m, 2);
+                                                    currentPrice = decimal.Round(currentPrice * 56.5m, 2);
+                                                    totalValueAmount = decimal.Round(totalValueAmount * 56.5m, 2);
+                                                    profitLossAmount = decimal.Round(profitLossAmount * 56.5m, 2);
+                                                }
+                                            }
+                                            <td class="text-white">
+                                                <span class="price" data-price-usd="@holding.PurchasePrice.ToString("F2")">@holdingCurrencySymbol@purchasePrice.ToString("N2")</span>
+                                            </td>
+                                            <td class="text-white" id="currentPrice_@holding.StockId">
+                                                <span class="price" data-price-usd="@holding.CurrentPrice.ToString("F2")">@holdingCurrencySymbol@currentPrice.ToString("N2")</span>
+                                            </td>
+                                            <td class="text-white" id="totalValue_@holding.StockId">
+                                                <span class="price" data-price-usd="@totalValue.ToString("F2")">@holdingCurrencySymbol@totalValueAmount.ToString("N2")</span>
+                                            </td>
+                                            <td class="@profitLossClass">
+                                                <i class="bi @profitLossIcon me-1"></i>
+                                                <span id="profitLoss_@holding.StockId" class="price" data-price-usd="@Math.Abs(holding.ProfitLoss).ToString("F2")">
+                                                    @(holding.ProfitLoss >= 0 ? "+" : "")@holdingCurrencySymbol@Math.Abs(profitLossAmount).ToString("N2") (@holding.ProfitLossPercentage)
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-sm btn-danger" onclick="sellStock('@holding.Symbol', @holding.StockId, @holding.Quantity)">
+                                                    <i class="bi bi-cart-dash me-1"></i> Sell
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td colspan="7" class="text-center text-muted py-4">
+                                            <i class="bi bi-info-circle me-2"></i> You don't own any stocks yet. Visit the <a href="@Url.Action("Stocks", "Home")" class="text-primary">Stocks</a> page to start investing.
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Trade History Section -->
+            <div class="col-lg-12">
+            <div class="card shadow-sm border-0" style="background-color: #2a2d3a; border-radius: 12px; overflow: hidden;">
+                <div class="card-header bg-gradient d-flex justify-content-between align-items-center" style="background-color: #222531; border-bottom: none;">
+                    <h4 class="text-white mb-0 fw-bold">Trade History</h4>
+                    <div class="dropdown">
+                        <button class="btn btn-sm btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            Filter
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="#">All Trades</a></li>
+                            <li><a class="dropdown-item" href="#">Buy Orders</a></li>
+                            <li><a class="dropdown-item" href="#">Sell Orders</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover mb-0" style="background-color: #2a2d3a;">
+                            <thead>
+                                <tr>
+                                    <th>Stock</th>
+                                    <th>Type</th>
+                                    <th>Date</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Total Amount</th>
+                                    <th>Receipt</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model.Transactions.Any())
+                                {
+                                    @foreach (var transaction in Model.Transactions)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    @{
+                                                         // Get stock symbol from StockId
+                                                        var stock = await _context.Stocks.FindAsync(transaction.StockId);
+                                                        var symbol = stock?.symbol ?? "";
+                                                        
+                                                        // Check if this is a funds transaction (Add Funds or Payout)
+                                                        bool isFundsTransaction = string.IsNullOrEmpty(symbol);
+                                                        if (isFundsTransaction)
+                                                        {
+                                                            symbol = transaction.Price > 0 ? "ADD FUNDS" : "PAYOUT";
+                                                        }
+                                                        var transactionTypeLabel = "Unknown";
+                                                        if (isFundsTransaction && transaction.Price > 0)
+                                                        {
+                                                            transactionTypeLabel = "Add Funds";
+                                                        }
+                                                        else if (isFundsTransaction && transaction.Price < 0)
+                                                        {
+                                                            transactionTypeLabel = "Payout";
+                                                        }
+                                                        else if (transaction.Price > 0)
+                                                        {
+                                                            transactionTypeLabel = "Buy";
+                                                        }
+                                                        else if (transaction.Price < 0)
+                                                        {
+                                                            transactionTypeLabel = "Sell";
+                                                        }
+                                                        var stockName = stock?.company_name ?? symbol;
+                                                        var transactionDateTimeDisplay = transaction.TransactionTime.ToLocalTime().ToString("MMM dd, yyyy hh:mm tt");
+                                                        
+                                                        var firstLetter = symbol.Length > 0 ? symbol[0].ToString().ToUpper() : "";
+                                                        var bgColor = "#3b82f6"; // Default blue
+                                                        
+                                                        // Different colors based on transaction type
+                                                        if (transaction.Price < 0)
+                                                        {
+                                                            bgColor = "#ef4444"; // Red for sells
+                                                        }
+                                                        else if (transaction.Price > 0)
+                                                        {
+                                                            bgColor = "#10b981"; // Green for buys
+                                                        }
+                                                    }
+                                                    
+                                                    <div class="symbol me-2" style="width: 30px; height: 30px; background-color: @bgColor; border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+                                                        <span class="text-white fw-bold">@firstLetter</span>
+                                                    </div>
+                                                    <span class="text-white">@symbol</span>
+                                                </div>
+                                            </td>
+                                             <td>
+                                                 @if (isFundsTransaction && transaction.Price > 0)
+                                                 {
+                                                     <span class="badge" style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.8), rgba(236, 72, 153, 0.8));">Add Funds</span>
+                                                 }
+                                                 else if (isFundsTransaction && transaction.Price < 0)
+                                                 {
+                                                     <span class="badge" style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.8), rgba(236, 72, 153, 0.8));">Payout</span>
+                                                 }
+                                                 else if (transaction.Price > 0)
+                                                 {
+                                                     <span class="badge bg-success">Buy</span>
+                                                 }
+                                                 else if (transaction.Price < 0)
+                                                 {
+                                                     <span class="badge bg-danger">Sell</span>
+                                                 }
+                                                 else
+                                                 {
+                                                     <span class="badge bg-secondary">Unknown</span>
+                                                 }
+                                            </td>
+                                            <td>@transaction.TransactionTime.ToString("MMM dd, yyyy")</td>
+                                            <td>@transaction.quantity</td>
+                                            @{
+                                                var transactionCurrency = _currencyService.GetUserPreferredCurrency();
+                                                var transactionCurrencySymbol = transactionCurrency == "PHP" ? "₱" : "$";
+                                                
+                                                var price = Math.Abs(transaction.Price);
+                                                var totalAmount = Math.Abs(transaction.Price * transaction.quantity);
+                                                
+                                                if (transactionCurrency == "PHP")
+                                                {
+                                                    price = decimal.Round(price * 56.5m, 2);
+                                                    totalAmount = decimal.Round(totalAmount * 56.5m, 2);
+                                                }
+                                                
+                                                // For buy transactions, show amount in red (money spent)
+                                                // For sell transactions, compare sell price with average buy price to determine profit/loss
+                                                var cssClass = transaction.Price > 0 ? "text-danger" : "text-success";
+                                                
+                                                // If it's a sell transaction and we have the average purchase price, compare
+                                                if (transaction.Price < 0)
+                                                {
+                                                    // Try to find the stock holding to get average purchase price
+                                                    var holding = Model.StockHoldings.FirstOrDefault(h => h.StockId == transaction.StockId);
+                                                    
+                                                    // If we can't find the holding (might have sold all), use a default comparison
+                                                    // Assume profit if absolute value of sell price is greater than 100
+                                                    bool isProfitable = holding != null ? 
+                                                        Math.Abs(transaction.Price) > holding.PurchasePrice : 
+                                                        Math.Abs(transaction.Price) > 100;
+                                                        
+                                                    cssClass = isProfitable ? "text-success" : "text-danger";
+                                                }
+                                                
+                                                var prefix = transaction.Price > 0 ? "-" : "+";
+                                                
+                                                // Check if this is a PHP transaction
+                                                var phpNote = "";
+                                                if (transaction.TransactionType != null && transaction.TransactionType.Contains("PHP"))
+                                                {
+                                                    phpNote = " <small class=\"text-muted\">(PHP)</small>";
+                                                }
+
+                                                var priceDisplay = $"{transactionCurrencySymbol}{price.ToString("N2")}";
+                                                var totalDisplay = $"{transactionCurrencySymbol}{totalAmount.ToString("N2")}";
+                                                var totalDisplayWithSign = $"{prefix}{transactionCurrencySymbol}{totalAmount.ToString("N2")}";
+                                            }
+                                            <td>
+                                                <span class="price" data-price-usd="@Math.Abs(transaction.Price).ToString("F2")">@priceDisplay</span>
+                                                @Html.Raw(phpNote)
+                                            </td>
+                                            <td class="@cssClass">
+                                                <span class="price" data-price-usd="@totalAmount.ToString("F2")">@totalDisplayWithSign</span>
+                                                @Html.Raw(phpNote)
+                                            </td>
+                                            <td class="text-end">
+                                                <button type="button" class="btn btn-sm view-receipt-btn" style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.8), rgba(236, 72, 153, 0.8)); border: none; color: white; border-radius: 8px; padding: 0.35rem 0.85rem; font-weight: 500;"
+                                                    data-transaction-id="@transaction.transaction_id"
+                                                    data-stock-name="@stockName"
+                                                    data-type="@transactionTypeLabel"
+                                                    data-quantity="@transaction.quantity"
+                                                    data-price="@priceDisplay"
+                                                    data-total="@totalDisplay"
+                                                    data-date="@transactionDateTimeDisplay">
+                                                    <i class="bi bi-receipt-cutoff me-1"></i> View Receipt
+                                                </button>
+                                                <a class="btn btn-sm btn-outline-light mt-2" href="@Url.Action("DownloadReceipt", "Account", new { transactionId = transaction.transaction_id })">
+                                                    <i class="bi bi-download me-1"></i> Download PDF Receipt
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td colspan="7" class="text-center text-muted py-4">
+                                            <i class="bi bi-info-circle me-2"></i> No transactions found. Start trading to see your history here.
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center py-3" style="background: rgba(0, 0, 0, 0.2); border-top: 1px solid rgba(255, 255, 255, 0.05);">
+                    <span class="text-muted small">Showing @Model.Transactions.Count of @Model.TotalTrades trades</span>
+                    <nav>
+                        <ul class="pagination pagination-sm mb-0">
+                            @if (Model.CurrentPage > 1)
+                            {
+                                <li class="page-item"><a class="page-link" href="@Url.Action("Profile", "Account", new { page = Model.CurrentPage - 1, pageSize = Model.PageSize })">Previous</a></li>
+                            }
+                            else
+                            {
+                                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                            }
+                            
+                            @{
+                                // Calculate the range of page numbers to display (chunked pagination)
+                                int chunkSize = 3;
+                                int halfChunk = chunkSize / 2;
+                                int chunkStart = Math.Max(1, Model.CurrentPage - halfChunk);
+                                int chunkEnd = Math.Min(Model.TotalPages, chunkStart + chunkSize - 1);
+                                
+                                // Adjust the start if we're near the end to ensure we always show chunkSize pages if possible
+                                if (chunkEnd - chunkStart + 1 < chunkSize && chunkStart > 1)
+                                {
+                                    chunkStart = Math.Max(1, chunkEnd - chunkSize + 1);
+                                }
+                                
+                                // Show first page if not in the current chunk
+                                if (chunkStart > 1)
+                                {
+                                    <li class="page-item"><a class="page-link" href="@Url.Action("Profile", "Account", new { page = 1, pageSize = Model.PageSize })">1</a></li>
+                                    
+                                    // Show ellipsis if there's a gap
+                                    if (chunkStart > 2)
+                                    {
+                                        <li class="page-item disabled"><span class="page-link">...</span></li>
+                                    }
+                                }
+                                
+                                // Show the current chunk of pages
+                                for (int i = chunkStart; i <= chunkEnd; i++)
+                                {
+                                    <li class="page-item @(i == Model.CurrentPage ? "active" : "")"><a class="page-link" href="@Url.Action("Profile", "Account", new { page = i, pageSize = Model.PageSize })">@i</a></li>
+                                }
+                                
+                                // Show last page if not in the current chunk
+                                if (chunkEnd < Model.TotalPages)
+                                {
+                                    // Show ellipsis if there's a gap
+                                    if (chunkEnd < Model.TotalPages - 1)
+                                    {
+                                        <li class="page-item disabled"><span class="page-link">...</span></li>
+                                    }
+                                    
+                                    <li class="page-item"><a class="page-link" href="@Url.Action("Profile", "Account", new { page = Model.TotalPages, pageSize = Model.PageSize })">@Model.TotalPages</a></li>
+                                }
+                            }
+                            
+                            @if (Model.CurrentPage < Model.TotalPages)
+                            {
+                                <li class="page-item"><a class="page-link" href="@Url.Action("Profile", "Account", new { page = Model.CurrentPage + 1, pageSize = Model.PageSize })">Next</a></li>
+                            }
+                            else
+                            {
+                                <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+                            }
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="transactionReceiptModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" style="background-color: #1f2230; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08);">
+            <div class="modal-header border-0" style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.4), rgba(236, 72, 153, 0.4)); border-top-left-radius: 16px; border-top-right-radius: 16px;">
+                <h5 class="modal-title text-white fw-bold">Transaction Receipt</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <div id="receiptContent" style="background-color: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; padding: 2rem;">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <h6 class="text-white-50 mb-1">TradeX</h6>
+                            <h3 class="text-white fw-bold mb-0">Receipt</h3>
+                        </div>
+                        <div class="text-end">
+                            <span class="badge" style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.8), rgba(236, 72, 153, 0.8)); padding: 0.5rem 1rem; border-radius: 999px;">Digital Copy</span>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div>
+                                <span class="text-white-50 small">Transaction ID</span>
+                                <div class="text-white fw-semibold" data-receipt-field="transactionId"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div>
+                                <span class="text-white-50 small">Date &amp; Time</span>
+                                <div class="text-white fw-semibold" data-receipt-field="date"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div>
+                                <span class="text-white-50 small">Stock Name</span>
+                                <div class="text-white fw-semibold" data-receipt-field="stockName"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div>
+                                <span class="text-white-50 small">Type</span>
+                                <div class="text-white fw-semibold" data-receipt-field="type"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div>
+                                <span class="text-white-50 small">Quantity</span>
+                                <div class="text-white fw-semibold" data-receipt-field="quantity"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div>
+                                <span class="text-white-50 small">Price per Unit</span>
+                                <div class="text-white fw-semibold" data-receipt-field="price"></div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div style="padding: 1rem; border-radius: 12px; background: linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(236, 72, 153, 0.12));">
+                                <span class="text-white-50 small">Total Amount</span>
+                                <div class="text-white fw-bold fs-4" data-receipt-field="total"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer border-0 d-flex justify-content-between align-items-center px-4 pb-4">
+                <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal" style="border-radius: 8px; padding: 0.5rem 1.2rem;">Close</button>
+                <button type="button" id="downloadReceiptBtn" class="btn" style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.9), rgba(236, 72, 153, 0.9)); color: white; border-radius: 8px; padding: 0.5rem 1.4rem; font-weight: 500;">
+                    <i class="bi bi-download me-1"></i> Download PDF Receipt
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Profile Modal -->
+<div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="background: rgba(42, 45, 58, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px;">
+            <div class="modal-header" style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.5), rgba(236, 72, 153, 0.5)); border-bottom: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px 16px 0 0;">
+                <h5 class="modal-title text-white" id="editProfileModalLabel">Edit Your Profile</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <form id="editProfileForm" method="post" action="@Url.Action("UpdateProfile", "Account")">
+                    @Html.AntiForgeryToken()
+                    <div class="mb-3">
+                        <label for="username" class="form-label text-white-50">Username</label>
+                        <div class="input-group">
+                            <span class="input-group-text" style="background: rgba(30, 30, 40, 0.6); border: 1px solid rgba(255, 255, 255, 0.1);"><i class="bi bi-person"></i></span>
+                            <input type="text" class="form-control" id="username" name="username" value="@Model.User.username" style="background: rgba(30, 30, 40, 0.6); border: 1px solid rgba(255, 255, 255, 0.1); color: white;">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="firstName" class="form-label text-white-50">First Name</label>
+                        <div class="input-group">
+                            <span class="input-group-text" style="background: rgba(30, 30, 40, 0.6); border: 1px solid rgba(255, 255, 255, 0.1);"><i class="bi bi-person-badge"></i></span>
+                            <input type="text" class="form-control" id="firstName" name="firstName" value="@Model.User.firstName" style="background: rgba(30, 30, 40, 0.6); border: 1px solid rgba(255, 255, 255, 0.1); color: white;">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="lastName" class="form-label text-white-50">Last Name</label>
+                        <div class="input-group">
+                            <span class="input-group-text" style="background: rgba(30, 30, 40, 0.6); border: 1px solid rgba(255, 255, 255, 0.1);"><i class="bi bi-person-badge"></i></span>
+                            <input type="text" class="form-control" id="lastName" name="lastName" value="@Model.User.lastName" style="background: rgba(30, 30, 40, 0.6); border: 1px solid rgba(255, 255, 255, 0.1); color: white;">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label text-white-50">Email</label>
+                        <div class="input-group">
+                            <span class="input-group-text" style="background: rgba(30, 30, 40, 0.6); border: 1px solid rgba(255, 255, 255, 0.1);"><i class="bi bi-envelope"></i></span>
+                            <input type="email" class="form-control" id="email" name="email" value="@Model.User.email" style="background: rgba(30, 30, 40, 0.6); border: 1px solid rgba(255, 255, 255, 0.1); color: white;">
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="newPassword" class="form-label text-white-50">New Password (leave blank to keep current)</label>
+                        <div class="input-group">
+                            <span class="input-group-text" style="background: rgba(30, 30, 40, 0.6); border: 1px solid rgba(255, 255, 255, 0.1);"><i class="bi bi-lock"></i></span>
+                            <input type="password" class="form-control" id="newPassword" name="newPassword" placeholder="••••••••" style="background: rgba(30, 30, 40, 0.6); border: 1px solid rgba(255, 255, 255, 0.1); color: white;">
+                        </div>
+                        <small class="text-white-50 mt-1">Leave blank if you don't want to change your password</small>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn" style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.8), rgba(236, 72, 153, 0.8)); border: none; color: white; border-radius: 10px; padding: 0.6rem 1.2rem; font-weight: 500; box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3); transition: all 0.3s ease;">
+                            <i class="bi bi-check-circle me-2"></i> Save Changes
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    <script src="/js/trade.js?v=@DateTime.Now.Ticks"></script>
+    <script src="/js/portfolio.js?v=@DateTime.Now.Ticks"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.addEventListener('submit', function (e) {
+                if (e.target && e.target.id === 'editProfileForm') {
+                    e.preventDefault();
+
+                    const editProfileForm = e.target;
+                    const submitButton = editProfileForm.querySelector('button[type="submit"]');
+                    const originalButtonText = submitButton.innerHTML;
+                    submitButton.disabled = true;
+                    submitButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Saving...';
+
+                    fetch(editProfileForm.action, {
+                        method: 'POST',
+                        body: new FormData(editProfileForm),
+                        headers: {
+                            'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        const existingAlerts = editProfileForm.querySelectorAll('.alert');
+                        existingAlerts.forEach(alert => alert.remove());
+
+                        if (data.success) {
+                            const alertDiv = document.createElement('div');
+                            alertDiv.className = 'alert alert-success mt-3';
+                            alertDiv.innerHTML = `<i class="bi bi-check-circle me-2"></i> ${data.message}`;
+                            editProfileForm.prepend(alertDiv);
+
+                            if (data.username) {
+                                const usernameElement = document.querySelector('h5.text-white.fw-bold.mb-1');
+                                if (usernameElement) {
+                                    usernameElement.textContent = data.username;
+                                }
+                            }
+
+                            setTimeout(() => {
+                                const modalInstance = bootstrap.Modal.getInstance(document.getElementById('editProfileModal'));
+                                if (modalInstance) {
+                                    modalInstance.hide();
+                                }
+                                window.location.reload();
+                            }, 1500);
+                        } else {
+                            const alertDiv = document.createElement('div');
+                            alertDiv.className = 'alert alert-danger mt-3';
+                            alertDiv.innerHTML = `<i class="bi bi-exclamation-circle me-2"></i> ${data.message}`;
+                            editProfileForm.prepend(alertDiv);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        const alertDiv = document.createElement('div');
+                        alertDiv.className = 'alert alert-danger mt-3';
+                        alertDiv.innerHTML = '<i class="bi bi-exclamation-circle me-2"></i> An error occurred. Please try again.';
+                        editProfileForm.prepend(alertDiv);
+                    })
+                    .finally(() => {
+                        submitButton.disabled = false;
+                        submitButton.innerHTML = originalButtonText;
+                    });
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var receiptModalElement = document.getElementById('transactionReceiptModal');
+            if (!receiptModalElement) {
+                return;
+            }
+            var receiptModal = new bootstrap.Modal(receiptModalElement);
+            var fieldMap = {
+                transactionId: receiptModalElement.querySelector('[data-receipt-field="transactionId"]'),
+                stockName: receiptModalElement.querySelector('[data-receipt-field="stockName"]'),
+                type: receiptModalElement.querySelector('[data-receipt-field="type"]'),
+                quantity: receiptModalElement.querySelector('[data-receipt-field="quantity"]'),
+                price: receiptModalElement.querySelector('[data-receipt-field="price"]'),
+                total: receiptModalElement.querySelector('[data-receipt-field="total"]'),
+                date: receiptModalElement.querySelector('[data-receipt-field="date"]')
+            };
+            var currentTransactionId = '';
+            document.querySelectorAll('.view-receipt-btn').forEach(function (button) {
+                button.addEventListener('click', function () {
+                    currentTransactionId = this.dataset.transactionId || '';
+                    if (fieldMap.transactionId) fieldMap.transactionId.textContent = this.dataset.transactionId || '';
+                    if (fieldMap.stockName) fieldMap.stockName.textContent = this.dataset.stockName || '';
+                    if (fieldMap.type) fieldMap.type.textContent = this.dataset.type || '';
+                    if (fieldMap.quantity) fieldMap.quantity.textContent = this.dataset.quantity || '';
+                    if (fieldMap.price) fieldMap.price.textContent = this.dataset.price || '';
+                    if (fieldMap.total) fieldMap.total.textContent = this.dataset.total || '';
+                    if (fieldMap.date) fieldMap.date.textContent = this.dataset.date || '';
+                    receiptModal.show();
+                });
+            });
+            var downloadButton = document.getElementById('downloadReceiptBtn');
+            if (downloadButton) {
+                downloadButton.addEventListener('click', function () {
+                    if (!currentTransactionId) {
+                        return;
+                    }
+                    var downloadUrl = '@Url.Action("DownloadReceipt", "Account")';
+                    window.location.href = downloadUrl + '?transactionId=' + encodeURIComponent(currentTransactionId);
+                });
+            }
+        });
+    </script>
+}
